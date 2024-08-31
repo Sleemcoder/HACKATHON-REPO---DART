@@ -1,19 +1,49 @@
-void main () {
-  List<int> quickSort(List<int> list) {
-  // Base case: If the list is empty or has one element, it's already sorted
+
+// Main Function
+void main() {
+  // Merge function
+List<int> merge(List<int> left, List<int> right) {
+  List<int> result = [];
+  int leftIndex = 0;
+  int rightIndex = 0;
+
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] <= right[rightIndex]) {
+      result.add(left[leftIndex]);
+      leftIndex++;
+    } else {
+      result.add(right[rightIndex]);
+      rightIndex++;
+    }
+  }
+
+  // Add remaining elements
+  result.addAll(left.sublist(leftIndex));
+  result.addAll(right.sublist(rightIndex));
+
+  return result;
+}
+
+// Merge Sort
+List<int> mergeSort(List<int> list) {
   if (list.length <= 1) {
     return list;
   }
+  int middle = list.length ~/ 2;
+  List<int> left = list.sublist(0, middle);
+  List<int> right = list.sublist(middle);
+  return merge(mergeSort(left), mergeSort(right));
+}
 
-  // Choose a pivot (we'll use the middle element)
+// Quick Sort
+List<int> quickSort(List<int> list) {
+  if (list.length <= 1) {
+    return list;
+  }
   int pivot = list[list.length ~/ 2];
-
-  // Create three lists to hold elements less than, equal to, and greater than the pivot
   List<int> less = [];
   List<int> equal = [];
   List<int> greater = [];
-
-  // Go through each number in the list and put it in the correct list
   for (int num in list) {
     if (num < pivot) {
       less.add(num);
@@ -23,23 +53,15 @@ void main () {
       greater.add(num);
     }
   }
-
-  // Recursively sort the less and greater lists, then combine them with the equal list
   return quickSort(less)..addAll(equal)..addAll(quickSort(greater));
 }
 
-  List<int> unsortedList = [33, 15, 10, 99, 76, 23];
-  List<int> sortedList = quickSort(unsortedList);
-  print(sortedList); // Output: [10, 15, 23, 33, 76, 99]
-
-
-// Bubble Sort implementation
-  List<int> bubbleSort(List<int> list) {
+// Bubble Sort
+List<int> bubbleSort(List<int> list) {
   int n = list.length;
   for (int i = 0; i < n - 1; i++) {
     for (int j = 0; j < n - i - 1; j++) {
       if (list[j] > list[j + 1]) {
-        // Swap if the element is greater than the next one
         int temp = list[j];
         list[j] = list[j + 1];
         list[j + 1] = temp;
@@ -49,4 +71,19 @@ void main () {
   return list;
 }
 
+  // Example list of ages
+  List<int> ages = [29, 15, 42, 24, 31, 19];
+
+  // Quick Sort
+  print('Original ages: $ages');
+  List<int> sortedByQuickSort = quickSort([...ages]);
+  print('Ages sorted by Quick Sort: $sortedByQuickSort');
+
+  // Merge Sort
+  List<int> sortedByMergeSort = mergeSort([...ages]);
+  print('Ages sorted by Merge Sort: $sortedByMergeSort');
+
+  // Bubble Sort
+  List<int> sortedByBubbleSort = bubbleSort([...ages]);
+  print('Ages sorted by Bubble Sort: $sortedByBubbleSort');
 }
