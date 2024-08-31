@@ -24,8 +24,8 @@ void main() {
     return isPalindrome(number.toString());
   }
 
-  print(isPalindrome("Was it a car or a cat I saw?")); 
-  print(isPalindrome("hello")); 
+  print(isPalindrome("Was it a car or a cat I saw?"));
+  print(isPalindrome("hello"));
   print(isPalindrome("Racecar"));
 
   print(isNumericPalindrome(12321));
