@@ -24,10 +24,10 @@ void main() {
     return isPalindrome(number.toString());
   }
 
-  print(isPalindrome("Was it a car or a cat I saw?")); // true
-  print(isPalindrome("hello")); // false
-  print(isPalindrome("Racecar")); // true
+  print(isPalindrome("Was it a car or a cat I saw?")); 
+  print(isPalindrome("hello")); 
+  print(isPalindrome("Racecar"));
 
-  print(isNumericPalindrome(12321)); // true
-  print(isNumericPalindrome(12345)); // false
+  print(isNumericPalindrome(12321));
+  print(isNumericPalindrome(12345));
 }
