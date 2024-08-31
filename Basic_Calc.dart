@@ -37,9 +37,9 @@ double extendedCalculator(String expression) {
 
 print(basicCalculator(10, 5, '+'));
   print(basicCalculator(10, 5, '-')); 
-  print(basicCalculator(10, 5, '*')); // 50
-  print(basicCalculator(10, 5, '/')); // 2
-  print(basicCalculator(10, 5, '%')); // 0
+  print(basicCalculator(10, 5, '*')); 
+  print(basicCalculator(10, 5, '/'));
+  print(basicCalculator(10, 5, '%'));
 
   // Extended calculator
   print(extendedCalculator("10 + 5")); // 15
