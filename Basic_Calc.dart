@@ -37,8 +37,7 @@ double extendedCalculator(String expression) {
   return basicCalculator(num1, num2, operator);
 }
 
-void main() {
-  print(basicCalculator(10, 5, '+')); // 15
+print(basicCalculator(10, 5, '+')); // 15
   print(basicCalculator(10, 5, '-')); // 5
   print(basicCalculator(10, 5, '*')); // 50
   print(basicCalculator(10, 5, '/')); // 2
@@ -47,6 +46,4 @@ void main() {
   // Extended calculator
   print(extendedCalculator("10 + 5")); // 15
   print(extendedCalculator("10 / 2")); // 5
-}
-
 }
