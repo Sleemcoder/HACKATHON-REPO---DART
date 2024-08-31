@@ -23,8 +23,6 @@ double basicCalculator(double num1, double num2, String operator) {
 }
 
 double extendedCalculator(String expression) {
-  // Implementation of multi-step operations is more complex and requires parsing
-  // Here, a simple example using the basicCalculator function for binary operations
   List<String> parts = expression.split(' ');
   if (parts.length != 3) {
     throw ArgumentError("Invalid expression format. Use 'num1 operator num2'.");
