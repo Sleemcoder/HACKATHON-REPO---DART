@@ -42,6 +42,6 @@ print(basicCalculator(10, 5, '+'));
   print(basicCalculator(10, 5, '%'));
 
   // Extended calculator
-  print(extendedCalculator("10 + 5")); // 15
-  print(extendedCalculator("10 / 2")); // 5
+  print(extendedCalculator("10 + 5"));
+  print(extendedCalculator("10 / 2"));
 }
